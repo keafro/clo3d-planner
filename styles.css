@@ -1,0 +1,39 @@
+:root{
+  --bg1:#071022; --bg2:#061426;
+  --card:rgba(255,255,255,0.02);
+  --accent:#7c3aed; --accent2:#06b6d4;
+  --muted:#9fb0c6; --text:#e8f4ff; --radius:12px;
+}
+*{box-sizing:border-box;font-family:Vazirmatn, system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:var(--text)}
+body{margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));padding:18px;min-height:100vh}
+.app{max-width:1200px;margin:0 auto;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6);backdrop-filter:blur(6px)}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 8px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.brand h1{margin:0;font-size:18px}
+.brand .sub{font-size:12px;color:var(--muted)}
+.actions{display:flex;gap:8px;align-items:center}
+.btn{background:linear-gradient(90deg,var(--accent),var(--accent2));border:none;color:white;padding:8px 10px;border-radius:10px;cursor:pointer}
+.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 10px;border-radius:10px;color:var(--text);cursor:pointer}
+.main{display:flex;gap:12px;margin-top:12px}
+.sidebar{width:340px;flex-shrink:0;display:flex;flex-direction:column;gap:10px}
+.card{background:var(--card);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.card.wide{width:100%}
+label{font-size:13px}
+.small{font-size:13px}
+.muted{color:var(--muted)}
+.tasks{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.task{display:flex;gap:10px;align-items:center;padding:10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.007));border:1px solid rgba(255,255,255,0.02)}
+.task .left{flex:1}
+.input{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--text)}
+.addRow{display:flex;gap:8px;margin-top:8px}
+.row{display:flex;gap:8px;margin-top:8px;align-items:center}
+.content{flex:1;display:flex;flex-direction:column;gap:12px}
+.taskList{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.controlsRow{display:flex;gap:8px;margin-top:12px;align-items:center}
+.historyList{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.historyItem{padding:10px;border-radius:8px;background:linear-gradient(90deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+.timerCircle{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;border:6px solid rgba(255,255,255,0.04)}
+.pomRow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pomControls{display:flex;gap:12px;align-items:center;margin-top:10px}
+.flexBetween{display:flex;justify-content:space-between;align-items:center}
+.footer{text-align:center;margin-top:12px;color:var(--muted)}
+@media (max-width:980px){.main{flex-direction:column}.sidebar{width:100%}}
