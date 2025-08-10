@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>پلنر کامل Clo3D — کیانوش</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="brand">
+        <h1>پلنر ۶ ماهه Clo3D</h1>
+        <div class="sub">نسخهٔ کامل — آفلاین و قابل نصب</div>
+      </div>
+      <div class="actions">
+        <button id="themeToggle" class="ghost">🌗 تم</button>
+        <button id="backupBtn" class="btn">پشتیبان JSON</button>
+        <button id="importBtn" class="ghost">وارد کردن</button>
+        <button id="exportCsvBtn" class="btn">خروجی CSV</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <div class="card">
+          <label>امروز: <span id="todayLabel"></span></label>
+          <label>انتخاب تاریخ</label>
+          <input type="date" id="selectedDate" />
+          <div class="small muted">تاریخ را می‌توانی دستی تغییر دهی</div>
+        </div>
+
+        <div class="card">
+          <strong>سه هدف اصلی</strong>
+          <div id="mainTasks" class="tasks"></div>
+          <div class="addRow">
+            <input id="customTitle" placeholder="عنوان کار دلخواه" />
+            <input id="customStart" type="time" />
+            <button id="addCustomBtn" class="btn">افزودن</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <strong>پومودورو</strong>
+          <div class="pomRow">
+            <label>جلسه (دقیقه)</label>
+            <input id="pomWork" type="number" value="25" min="5" />
+            <label>استراحت کوتاه</label>
+            <input id="pomShort" type="number" value="5" min="1" />
+            <label>استراحت بلند</label>
+            <input id="pomLong" type="number" value="15" min="5" />
+          </div>
+          <div class="pomControls">
+            <div id="pomTimer" class="timerCircle">25:00</div>
+            <div class="pomButtons">
+              <button id="pomStart" class="btn">شروع</button>
+              <button id="pomPause" class="ghost">وقفه</button>
+              <button id="pomReset" class="ghost">ریست</button>
+            </div>
+            <div class="small muted">حالت: <span id="pomState">کار</span> · چرخه‌ها: <span id="pomCycles">0</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <strong>یادداشت روزانه</strong>
+          <textarea id="dayNote" rows="6" placeholder="ایده‌ها، مشکلات، نکات آموزشی..."></textarea>
+          <div class="row">
+            <button id="saveNoteBtn" class="btn">ذخیره یادداشت</button>
+            <button id="searchNotesBtn" class="ghost">جستجوی یادداشت‌ها</button>
+          </div>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div class="card wide">
+          <div class="flexBetween">
+            <h2 id="dayTitle">برنامه روز</h2>
+            <div class="small muted">ذخیره محلی · هفتگی پشتیبان بگیر</div>
+          </div>
+
+          <div id="taskList" class="taskList"></div>
+
+          <div class="controlsRow">
+            <input id="manualTime" type="time" />
+            <input id="manualText" placeholder="لاگ دستی (مثلاً: 21:10 — دیدن جلسه 3)" />
+            <button id="addManualLog" class="btn">ثبت لاگ</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>آمار سریع (۷ روز اخیر)</h3>
+          <canvas id="progressChart" height="120"></canvas>
+          <div class="small muted" id="statsSummary"></div>
+        </div>
+
+        <div class="card wide">
+          <h3>تاریخچه روز</h3>
+          <ul id="history" class="historyList"></ul>
+        </div>
+
+        <div class="card wide">
+          <h3>راهنما</h3>
+          <ol>
+            <li>برای هر فعالیت فقط «ساعت شروع» را وارد کن؛ اگر خواستی «پایان» را هم دستی بنویس.</li>
+            <li>از پومودورو برای تمرکز استفاده کن؛ هر جلسه که تمام شد وضعیت را «انجام‌شده» کن.</li>
+            <li>اگر می‌خواهی آفلاین کامل روی موبایل باشد، روی هاست HTTPS بگذار و از Home Screen نصب کن.</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">ساخته شده برای کیانوش — موفق باشی 💪</footer>
+  </div>
+
+  <input type="file" id="importFile" accept=".json" style="display:none" />
+  <script src="app.js"></script>
+</body>
+</html>
