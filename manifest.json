@@ -1,9 +1,0 @@
-{
-  "name": "CLO3D Planner - Kianoush",
-  "short_name": "CLO3DPlanner",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#071022",
-  "theme_color": "#7c3aed",
-  "icons": []
-}
